@@ -72,4 +72,13 @@ function autoIndent.detect()
 	end
 end
 
+function autoIndent.setup()
+	vim.cmd [[
+	augroup autoIndent
+		autocmd!
+		autocmd BufReadPost * AutoIndent
+	augroup END
+	]]
+end
+
 return autoIndent;
