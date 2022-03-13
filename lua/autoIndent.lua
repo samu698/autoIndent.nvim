@@ -61,7 +61,7 @@ local function bufIndent()
 end
 
 function autoIndent.detect()
-	local indent = bufIndent()
+	local indent = bufIndent() or {}
 	if indent.tab then
 		setopt('expandtab', false)
 	elseif indent.space ~= 0 then
